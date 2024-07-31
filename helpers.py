@@ -35,3 +35,9 @@ def send_answer(token, answer):
     return response.json()
 
 
+def validate_json(json_data):
+    try:
+        json.loads(json_data)
+    except ValueError as err:
+        return False
+    return True
